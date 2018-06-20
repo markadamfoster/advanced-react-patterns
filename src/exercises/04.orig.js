@@ -3,6 +3,8 @@
 import React from 'react'
 import {Switch} from '../switch'
 
+// we're back to basics here. Rather than compound components,
+// let's use a render prop!
 class Toggle extends React.Component {
   state = {on: false}
   toggle = () =>
@@ -19,8 +21,7 @@ class Toggle extends React.Component {
     // You'll notice the children prop in the Usage component
     // is a function. 🐨 So you can replace this with a call this.props.children()
     // But you'll need to pass it an object with `on` and `toggle`.
-    // return <Switch on={on} onClick={this.toggle} />
-    return this.props.children({on, toggle: this.toggle})
+    return <Switch on={on} onClick={this.toggle} />
   }
 }
 
